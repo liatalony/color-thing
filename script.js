@@ -3,11 +3,13 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
   const palate = document.querySelector("input");
   let red, green, blue;
+  const colorbox = document.getElementById("colorBox");
   palate.addEventListener("input", getHex);
 
   function getHex() {
     const hex = document.querySelector(".hex");
     hex.textContent = palate.value;
+    colorbox.style.backgroundColor = palate.value;
     getRGB();
   }
   function getRGB() {
